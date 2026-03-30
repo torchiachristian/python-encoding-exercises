@@ -1,3 +1,4 @@
+
 #cifra una sola lettera a come esempio
 #char = 'a'
 #position = ord(char) - 97

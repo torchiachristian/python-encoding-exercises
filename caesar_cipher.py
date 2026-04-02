@@ -11,7 +11,7 @@
 def encrypt(text, key):
     result = ""
     for char in text:
-        if char.isalpha():
+        if char.isalpha() and char.isascii():
             if char.islower():
                 position = ord(char) - 97
                 new_position = (position + key) % 26
@@ -25,3 +25,7 @@ def encrypt(text, key):
         else:
             result += char
     return result
+
+#problema è l'emoji ðŸ˜Š perchè contiene caratteri che isalpha() considera lettere ma non sono ASCII
+#dopo che la funzione era già stata prodotta ho cambiato if char.isalpha() in    if char.isalpha() and char.isascii():
+#10/10 test , creo main
